@@ -33,9 +33,15 @@ source .venv/bin/activate
 pip install -r configs/python/requirements-dev.txt
 ```
 
+## Reset environment
+If the environment is broken:
+- Delete `.venv`
+- Recreate venv following the steps above
+
 ## Notes
 - Do not commit .venv
 - Always activate venv before running tools
+- Verified on Windows 11 and macOS
 
 ---
 ### ⑤ Commit

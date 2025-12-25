@@ -1,17 +1,19 @@
-# Python virtual environment (venv)
+# Python 仮想環境（venv）
 
-## Purpose
-This document describes how to create and use a Python virtual environment
-to ensure reproducible development across Windows and macOS.
-
-## Why venv per project
-- Avoid dependency conflicts
-- Ensure reproducibility
-- Easy reset when environment breaks
+## 目的
+このドキュメントは、Windows / macOS 両環境において  
+**再現性のある Python 開発環境**を構築・運用するための手順をまとめたものです。
 
 ---
 
-## Windows (PowerShell)
+## プロジェクトごとに venv を使う理由
+- 依存関係の衝突を防ぐため
+- 環境の再現性を確保するため
+- 問題発生時に簡単にリセットできるため
+
+---
+
+## Windows（PowerShell）
 
 ```powershell
 python -m venv .venv
@@ -19,11 +21,13 @@ python -m venv .venv
 pip install -r configs/python/requirements-dev.txt
 ```
 
-## If script execution is blocked:
+## スクリプトの実行がブロックされる場合
 
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
+
+---
 
 ## macOS
 
@@ -33,20 +37,21 @@ source .venv/bin/activate
 pip install -r configs/python/requirements-dev.txt
 ```
 
-## Reset environment
-If the environment is broken:
-- Delete `.venv`
-- Recreate venv following the steps above
+## 環境のリセット
+環境に問題が発生した場合は、以下の手順で再作成します。
+- `.venv` ディレクトリを削除
+- 上記手順に従って venv を再作成
 
-## Notes
-- Do not commit .venv
-- Always activate venv before running tools
-- Verified on Windows 11 and macOS
+## 注意点
+- `.venv` は Git にコミットしない
+- ツールを実行する前に、必ず venv を有効化する
+- Windows 11 / macOS 環境で動作確認済み
 
 ---
+
 ### ⑤ Commit
 - Commit message：  
   `Add Python venv setup documentation`
-- Direct commit to main branch：**OK**
+- main ブランチへ直接コミット：OK
 - Commit changes
 ---

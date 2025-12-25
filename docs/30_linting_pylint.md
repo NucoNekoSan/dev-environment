@@ -36,7 +36,7 @@ It is recommended to manage pylint via a development requirements file.
 ## Configuration
 
 ### Configuration file
-- Location: configs/pylint/pylintrc
+- Location: `configs/pylint/pylintrc`
 - Scope: Project-specific only
 
 ### Why per-project configuration
@@ -55,7 +55,7 @@ pylint your_module_or_package
 ```
 
 ### From PyCharm
-- Ensure the project interpreter points to .venv
+- Ensure the project interpreter points to `.venv`
 - Enable pylint in PyCharm settings
 - Use the project configuration file
 

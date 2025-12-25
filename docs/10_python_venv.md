@@ -49,7 +49,7 @@ pip install -r configs/python/requirements-dev.txt
 
 ---
 
-### ⑤ Commit
+### Commit
 - Commit message：  
   `Add Python venv setup documentation`
 - main ブランチへ直接コミット：OK

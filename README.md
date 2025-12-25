@@ -1,35 +1,45 @@
 # dev-environment
 
-## Overview
-This repository documents a reproducible Python development environment
-for both **Windows** and **macOS**.
+## 概要
+このリポジトリは、**Windows / macOS 両対応の再現可能な Python 開発環境**を記録したものです。
 
-The goal is to minimize environment differences and avoid
-machine-dependent setups by documenting clear, repeatable steps.
+環境差分やマシン依存を最小限に抑えるため、  
+明確で繰り返し実行可能な手順をドキュメントとして整理しています。
 
-## Target environments
+---
+
+## 対象環境
 - Windows 10 / 11
 - macOS
 - Python 3.x
 - PyCharm
 
-## Contents
-- Python virtual environment (venv) setup for Windows / macOS
-- PyCharm configuration
-- Linting with pylint
-- .gitignore policy
-- Troubleshooting for common issues
+---
 
-## Policy
-- One virtual environment per project
-- Documentation-first approach
-- Prefer simple and maintainable setups over complex tooling
+## 内容
+- Windows / macOS 向け Python 仮想環境（venv）の構築手順
+- PyCharm の設定方法
+- pylint を用いた lint 設定
+- .gitignore の運用方針
+- よくあるトラブルと対処方法
 
-## How to use
-1. Read `docs/00_overview.md`
-2. Set up Python venv (`docs/10_python_venv.md`)
-3. Configure PyCharm (`docs/20_pycharm_setup.md`)
-4. Enable linting (`docs/30_linting_pylint.md`)
+---
 
-## Status
-- Actively maintained and updated as needed
+## 方針
+- プロジェクトごとに 1 つの仮想環境（venv）を使用
+- ドキュメントを起点とした運用を重視
+- 過度に複雑な構成より、**シンプルで保守しやすい設計**を優先
+
+---
+
+## 使い方
+1. `docs/00_overview.md` を読む
+2. Python 仮想環境を構築（`docs/10_python_venv.md`）
+3. PyCharm を設定（`docs/20_pycharm_setup.md`）
+4. lint を有効化（`docs/30_linting_pylint.md`）
+
+---
+
+## ステータス
+- 継続的にメンテナンス・更新中
+

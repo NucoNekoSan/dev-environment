@@ -1,81 +1,81 @@
-# PyCharm setup
+# PyCharm 設定
 
-## Purpose
-This document describes the standard PyCharm configuration
-used for Python development in this repository.
+## 目的
+このドキュメントは、本リポジトリにおける  
+**Python 開発用の標準的な PyCharm 設定**をまとめたものです。
 
-The goal is to ensure a consistent and reproducible setup
-across Windows and macOS environments.
-
----
-
-## Interpreter configuration
-
-### Policy
-- One virtual environment (`.venv`) per project
-- Do not use global Python interpreter
-- Interpreter is configured at project level
-
-### Steps
-1. Open **Settings / Preferences**
-2. Go to **Python Interpreter**
-3. Select the project interpreter
-4. Choose the `.venv` directory created in `docs/10_python_venv.md`
+Windows / macOS 環境間で設定差分を減らし、  
+**一貫性と再現性のある開発環境**を確保することを目的としています。
 
 ---
 
-## Project structure recognition
-Ensure PyCharm correctly recognizes the project structure:
+## インタプリタ設定
 
-- Project root is the repository root
-- `.venv` is excluded from indexing
-- `configs/` and `docs/` are included as project directories
+### 方針
+- プロジェクトごとに 1 つの仮想環境（`.venv`）を使用
+- グローバル Python インタプリタは使用しない
+- インタプリタはプロジェクト単位で設定する
 
----
-
-## Linting (pylint)
-
-### Policy
-- Linting is enabled via **pylint**
-- Configuration is project-specific
-- Global IDE rules are avoided
-
-### Setup
-1. Install pylint in the active venv
-2. Enable pylint in PyCharm settings
-3. Point PyCharm to the project interpreter
-4. Use `configs/pylint/pylintrc` as the configuration file
+### 手順
+1. **Settings / Preferences** を開く
+2. **Python Interpreter** を選択
+3. プロジェクトのインタプリタを選択
+4. `docs/10_python_venv.md` で作成した `.venv` ディレクトリを指定する
 
 ---
 
-## Terminal configuration
-- Use PyCharm built-in terminal
-- Ensure `.venv` is activated before running commands
-- Avoid mixing system shell and IDE shell unintentionally
+## プロジェクト構成の認識
+PyCharm が正しくプロジェクト構成を認識していることを確認します。
+
+- プロジェクトルートはリポジトリのルートディレクトリ
+- `.venv` はインデックス対象から除外されている
+- `configs/` および `docs/` はプロジェクトディレクトリとして認識されている
 
 ---
 
-## Code style
-- Follow default PyCharm Python style
-- Prefer readability over aggressive formatting
-- Avoid premature optimization of formatting rules
+## Lint 設定（pylint）
+
+### 方針
+- lint は **pylint** を使用
+- 設定はプロジェクト単位で管理
+- IDE 全体に影響するグローバルルールは使用しない
+
+### 設定手順
+1. 有効化されている venv に pylint をインストール
+2. PyCharm の設定画面で pylint を有効化
+3. プロジェクトのインタプリタが `.venv` を指していることを確認
+4. 設定ファイルとして `configs/pylint/pylintrc` を指定する
 
 ---
 
-## Common pitfalls
-
-### PyCharm uses wrong Python
-- Re-check interpreter selection
-- Verify `.venv` path
-- Restart PyCharm if necessary
-
-### pylint not detected
-- Ensure venv is activated
-- Confirm pylint is installed in the project venv
-- Check that PyCharm points to the correct interpreter
+## ターミナル設定
+- PyCharm 内蔵のターミナルを使用する
+- コマンド実行前に `.venv` が有効化されていることを確認
+- システムシェルと IDE ターミナルを意図せず混在させない
 
 ---
 
-## Notes
-- IDE settings may evolve as the project grows
-- Changes should be documented when affecting reproducibility
+## コードスタイル
+- PyCharm のデフォルト Python スタイルを基本とする
+- 過度な自動整形より、**可読性を優先**
+- フォーマットルールの最適化は必要になってから行う
+
+---
+
+## よくある問題
+
+### PyCharm が意図しない Python を使用している場合
+- インタプリタ設定を再確認する
+- `.venv` のパスが正しいか確認する
+- 必要に応じて PyCharm を再起動する
+
+### pylint が検出されない場合
+- venv が有効化されているか確認する
+- pylint がプロジェクトの venv にインストールされているか確認する
+- PyCharm が正しいインタプリタを参照しているか確認する
+
+---
+
+## 注意事項
+- IDE 設定はプロジェクトの成長に伴い変更される可能性がある
+- 再現性に影響する変更は、ドキュメントとして記録する

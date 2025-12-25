@@ -1,91 +1,92 @@
-# Linting with pylint
+# pylint による lint 設定
 
-## Purpose
-This document describes how pylint is used in this repository
-to maintain code quality and readability.
+## 目的
+このドキュメントは、本リポジトリにおいて  
+**コード品質と可読性を維持するために pylint をどのように利用するか**をまとめたものです。
 
-The goal is not to enforce strict rules blindly,
-but to provide consistent guidance for maintainable code.
-
----
-
-## Why pylint
-- Detect potential bugs early
-- Improve code readability
-- Encourage consistent coding style
-- Support long-term maintainability
+厳格なルールを盲目的に強制することではなく、  
+**保守しやすいコードを書くための一貫した指針**を提供することを目的としています。
 
 ---
 
-## Policy
-- Linting is applied **per project**
-- Global pylint configuration is avoided
-- Rules may be adjusted based on project context
-- Warnings are treated as guidance, not absolute errors
+## pylint を使用する理由
+- 潜在的なバグを早期に検出するため
+- コードの可読性を向上させるため
+- 一貫したコーディングスタイルを促すため
+- 長期的な保守性を支えるため
 
 ---
 
-## Installation
-pylint is installed as a development dependency inside the project virtual environment.
+## 方針
+- lint は **プロジェクト単位** で適用する
+- グローバルな pylint 設定は使用しない
+- ルールはプロジェクトの文脈に応じて調整する
+- 警告は「絶対的なエラー」ではなく、**判断のための指針**として扱う
+
+---
+
+## インストール
+pylint は、プロジェクトの仮想環境（venv）内に  
+**開発用依存関係**としてインストールします。
 
 ```bash
 pip install pylint
 ```
-It is recommended to manage pylint via a development requirements file.
+pylint は、開発用 requirements ファイルで管理することを推奨します。
 
-## Configuration
+## 設定
 
-### Configuration file
-- Location: `configs/pylint/pylintrc`
-- Scope: Project-specific only
+### 設定ファイル
+- 配置場所: `configs/pylint/pylintrc`
+- 適用範囲: プロジェクト単位のみ
 
-### Why per-project configuration
-- Different projects have different complexity
-- Avoid unnecessary warnings
-- Easier maintenance over time
+### プロジェクト単位で設定する理由
+- プロジェクトごとに規模や複雑さが異なるため
+- 不要な警告を避けるため
+- 長期的なメンテナンスを容易にするため
 
 ---
 
-## Running pylint
+## pylint の実行方法
 
-### From command line
+### コマンドラインから実行
 
 ```basn
 pylint your_module_or_package
 ```
 
-### From PyCharm
-- Ensure the project interpreter points to `.venv`
-- Enable pylint in PyCharm settings
-- Use the project configuration file
+### PyCharm から実行
+- プロジェクトのインタプリタが `.venv` を指していることを確認
+- PyCharm の設定画面で pylint を有効化
+- プロジェクト用の設定ファイルを使用する
 
 ---
 
-### Handling warnings
-- Review warnings carefully
-- Suppress warnings only when justified
-- Document any significant rule changes
+### 警告への対応
+- 警告内容をよく確認する
+- 正当な理由がある場合のみ警告を抑制する
+- 重要なルール変更はドキュメントとして記録する
 
 ---
 
-## Common issues
+## よくある問題
 
-### pylint not found
-- Ensure virtual environment is activated
-- Verify pylint is installed in .venv
-- Confirm PyCharm uses the correct interpreter
+### pylint が見つからない場合
+- 仮想環境（venv）が有効化されているか確認する
+- pylint が `.venv` にインストールされているか確認する
+- yCharm が正しいインタプリタを使用しているか確認する
 
-### Too many warnings
-- Start with default rules
-- Gradually refine configuration
-- Focus on readability over score
-
----
-
-## Notes
-- Linting rules may evolve with project maturity
-- Changes should be documented to maintain reproducibility
+### 警告が多すぎる場合
+- まずはデフォルト設定から始める
+- 徐々に設定を調整していく
+- スコアよりも 可読性を重視 する
 
 ---
 
-Changes should be documented to maintain reproducibility
+## 注意事項
+- lint ルールはプロジェクトの成熟度に応じて変化する可能性がある
+- 再現性に影響する変更は、必ずドキュメントとして記録する
+
+---
+
+再現性を維持するため、変更内容は必ずドキュメントとして記録する。
